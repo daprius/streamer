@@ -1,0 +1,185 @@
+# MediaMTX Configuration for iPhone Stream
+# Compatible with HaishinKit 1.9.9
+
+# General settings
+logLevel: info
+logDestinations: [stdout]
+logFile: mediamtx.log
+
+# API settings
+api: yes
+apiAddress: 127.0.0.1:9997
+
+# Metrics settings
+metrics: yes
+metricsAddress: 127.0.0.1:9998
+
+# RTMP settings - optimized for HaishinKit 1.9.9
+rtmp: yes
+rtmpAddress: :1935
+rtmpEncryption: "strict"
+rtmpServerKey: server.key
+rtmpServerCert: server.crt
+
+# RTSP settings for YOLO compatibility
+rtsp: yes
+rtspAddress: :8554
+rtspEncryption: "strict"
+rtspServerKey: server.key
+rtspServerCert: server.crt
+
+# HLS settings - optimized for low latency
+hls: yes
+hlsAddress: :8888
+hlsEncryption: no
+hlsVariant: lowLatency
+hlsSegmentCount: 3
+hlsSegmentDuration: 500ms
+hlsPartDuration: 100ms
+
+# WebRTC settings
+webrtc: yes
+webrtcAddress: :8889
+webrtcEncryption: no
+
+# Paths configuration
+paths:
+  # iPhone stream path - matches your iOS app
+  iphone_stream:
+    source: publisher
+    sourceProtocol: rtmp
+    sourceAnyPortEnable: no
+    sourceFingerprint: ""
+    sourceOnDemand: no
+    sourceOnDemandStartTimeout: 10s
+    sourceOnDemandCloseAfter: 10s
+    sourceRedirect: ""
+    disablePublisherOverride: no
+    fallback: ""
+    muteOnDemand: no
+    runOnInit: ""
+    runOnInitRestart: no
+    runOnDemand: ""
+    runOnDemandRestart: no
+    runOnDemandStartTimeout: 10s
+    runOnDemandCloseAfter: 10s
+    runOnRead: ""
+    runOnReadRestart: no
+    runOnReadStartTimeout: 10s
+    runOnReadCloseAfter: 10s
+    readUser: ""
+    readPass: ""
+    readIPs: []
+    publishUser: ""
+    publishPass: ""
+    publishIPs: []
+    readUserRegex: ""
+    readPassRegex: ""
+    publishUserRegex: ""
+    publishPassRegex: ""
+    readUserRegex: ""
+    readPassRegex: ""
+    publishUserRegex: ""
+    publishPassRegex: ""
+    authMethods: [internal, http]
+    record: no
+    recordPath: ./recordings/%path/%Y-%m-%d_%H-%M-%S
+    recordFormat: mp4
+    recordPartDuration: 1h
+    recordDeleteAfter: 24h
+    recordRotateOnDisconnect: no
+    runOnRecordSegmentComplete: ""
+    runOnRecordSegmentCompleteRestart: no
+    runOnRecordSegmentCompleteStartTimeout: 10s
+    runOnRecordSegmentCompleteCloseAfter: 10s
+    runOnRecordComplete: ""
+    runOnRecordCompleteRestart: no
+    runOnRecordCompleteStartTimeout: 10s
+    runOnRecordCompleteCloseAfter: 10s
+    runOnUnread: ""
+    runOnUnreadRestart: no
+    runOnUnreadStartTimeout: 10s
+    runOnUnreadCloseAfter: 10s
+    runOnDemandCloseAfter: 10s
+    runOnDemandStartTimeout: 10s
+    runOnDemandRestart: no
+    runOnDemand: ""
+    runOnInitRestart: no
+    runOnInit: ""
+    disablePublisherOverride: no
+    sourceRedirect: ""
+    sourceOnDemandCloseAfter: 10s
+    sourceOnDemandStartTimeout: 10s
+    sourceOnDemand: no
+    sourceFingerprint: ""
+    sourceAnyPortEnable: no
+    sourceProtocol: rtmp
+    source: publisher
+
+  # YOLO-compatible stream (RTSP output)
+  yolo_stream:
+    source: publisher
+    sourceProtocol: rtmp
+    sourceAnyPortEnable: no
+    sourceFingerprint: ""
+    sourceOnDemand: no
+    sourceOnDemandStartTimeout: 10s
+    sourceOnDemandCloseAfter: 10s
+    sourceRedirect: ""
+    disablePublisherOverride: no
+    fallback: ""
+    muteOnDemand: no
+    runOnInit: ""
+    runOnInitRestart: no
+    runOnDemand: ""
+    runOnDemandRestart: no
+    runOnDemandStartTimeout: 10s
+    runOnDemandCloseAfter: 10s
+    runOnRead: ""
+    runOnReadRestart: no
+    runOnReadStartTimeout: 10s
+    runOnReadCloseAfter: 10s
+    readUser: ""
+    readPass: ""
+    readIPs: []
+    publishUser: ""
+    publishPass: ""
+    publishIPs: []
+    readUserRegex: ""
+    readPassRegex: ""
+    publishUserRegex: ""
+    publishPassRegex: ""
+    authMethods: [internal, http]
+    record: no
+    recordPath: ./recordings/%path/%Y-%m-%d_%H-%M-%S
+    recordFormat: mp4
+    recordPartDuration: 1h
+    recordDeleteAfter: 24h
+    recordRotateOnDisconnect: no
+    runOnRecordSegmentComplete: ""
+    runOnRecordSegmentCompleteRestart: no
+    runOnRecordSegmentCompleteStartTimeout: 10s
+    runOnRecordSegmentCompleteCloseAfter: 10s
+    runOnRecordComplete: ""
+    runOnRecordCompleteRestart: no
+    runOnRecordCompleteStartTimeout: 10s
+    runOnRecordCompleteCloseAfter: 10s
+    runOnUnread: ""
+    runOnUnreadRestart: no
+    runOnUnreadStartTimeout: 10s
+    runOnUnreadCloseAfter: 10s
+    runOnDemandCloseAfter: 10s
+    runOnDemandStartTimeout: 10s
+    runOnDemandRestart: no
+    runOnDemand: ""
+    runOnInitRestart: no
+    runOnInit: ""
+    disablePublisherOverride: no
+    sourceRedirect: ""
+    sourceOnDemandCloseAfter: 10s
+    sourceOnDemandStartTimeout: 10s
+    sourceOnDemand: no
+    sourceFingerprint: ""
+    sourceAnyPortEnable: no
+    sourceProtocol: rtmp
+    source: publisher
